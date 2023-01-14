@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-
-    'playground'
+    'playground',
+    'store',
+    'tags'
 ]
 INTERNAL_IPS = [
     # ...
