@@ -43,14 +43,3 @@ class Order(models.Model):
     placed_at = models.DateField(auto_now_add=True)
     payment_status = models.CharField(
         max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
-
-
-class Address(models.Model):
-    street = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
-    # define the relation in the child class and set it to primary key in order to prevent
-    # the relation to become one-to-many relationship
-    # in this case we asume that Address is the child of Customer and
-    # a customer only can have one address
-    customer = models.OneToOneField(
-        Customer, on_delete=models.CASCADE, primary_key=True)
