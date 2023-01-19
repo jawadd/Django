@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'playground',
     'store',
-    'tags'
+    'tags',
+    'likes'
 ]
 INTERNAL_IPS = [
     # ...
