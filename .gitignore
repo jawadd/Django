@@ -1,7 +1,6 @@
-storefront/settings.py
 Pipfile
 Pipfile.lock
-
+storefront/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
