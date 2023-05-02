@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import Q
+from django.db.models import Q, F
 from store.models import Product
 # Create your views here.
 
@@ -22,7 +22,10 @@ def hello(request):
     #     inventory__lt=10).filter(unit_aprice__lt=30)
 
     # for using the OR we need to import Q as above and modify the queryset accordingly
-    queryset = Product.objects.filter(
-        Q(inventory__lt=20) | Q(unit_aprice__lt=20))
-
+    # queryset = Product.objects.filter(
+    # Q(inventory__lt=20) | Q(unit_price__lt=20))
+    # to compare two different fields
+    # queryset = Product.objects.filter(inventory=F('unit_price'))
+   # we can also reference field of a related table
+   # queryset = Product.objects.filter(inventory=F('collection__id'))
     return render(request, 'hello.html', {'name': 'Jawad', 'products': list(queryset)})
