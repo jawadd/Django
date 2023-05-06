@@ -28,7 +28,7 @@ def hello(request):
     # queryset = Product.objects.filter(
     # Q(inventory__lt=20) | Q(unit_price__lt=20))
     # to compare two different fields
-    # queryset = Product.objects.filter(inventory=F('unit_price'))
+    queryset = Product.objects.filter(inventory=F('unit_price'))
     # we can also reference field of a related table
     #  queryset = Product.objects.filter(inventory=F('collection__id'))
     # Product.objects.order_by('title') , sorts by ascending
